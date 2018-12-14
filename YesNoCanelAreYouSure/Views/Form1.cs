@@ -17,6 +17,7 @@ namespace YesNoCanelAreYouSure
         public Form1()
         {
             InitializeComponent();
+            var presenter = new Presenter.Presenter(this);
         }
 
         private void TriggerButton_Click(object sender, EventArgs e)

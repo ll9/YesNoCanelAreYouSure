@@ -13,6 +13,17 @@ namespace YesNoCanelAreYouSure.Presenter
         public Presenter(IForm1 form)
         {
             _form = form;
+            InitEvents();
+        }
+
+        private void InitEvents()
+        {
+            _form.Trigger += OpenYesNoCanelDialog;
+        }
+
+        private void OpenYesNoCanelDialog(object sender, EventArgs e)
+        {
+            Console.WriteLine("OpenYesNoCancelDialog");
         }
     }
 }
