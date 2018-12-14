@@ -16,5 +16,10 @@ namespace YesNoCanelAreYouSure
         {
             InitializeComponent();
         }
+
+        private void TriggerButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
