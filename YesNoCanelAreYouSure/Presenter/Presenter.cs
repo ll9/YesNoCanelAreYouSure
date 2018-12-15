@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using YesNoCanelAreYouSure.Utils;
 
 namespace YesNoCanelAreYouSure.Presenter
 {
@@ -23,7 +25,22 @@ namespace YesNoCanelAreYouSure.Presenter
 
         private void OpenYesNoCanelDialog(object sender, EventArgs e)
         {
-            Console.WriteLine("OpenYesNoCancelDialog");
+            var shouldSaveTempProject = new YesNoAreYouSureDialog().NoAreYouSure(
+                "Soll das temporäre Projekt gespeichert werden?", "Projekt Speichern");
+
+            if (shouldSaveTempProject == DialogResult.Yes)
+            {
+                MessageBox.Show("Saving...");
+            } 
+            else if (shouldSaveTempProject == DialogResult.No)
+            {
+                MessageBox.Show("Not Saving");
+            }
+            else if (shouldSaveTempProject == DialogResult.Cancel)
+            {
+                MessageBox.Show("Canceling");
+            }
         }
+
     }
 }
